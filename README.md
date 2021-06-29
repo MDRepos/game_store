@@ -27,6 +27,8 @@ open another terminal
 cd game_store/node_backend
 npm install
 node index.js
+```
+
 
 ## .Net Server
 
