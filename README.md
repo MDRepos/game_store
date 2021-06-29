@@ -27,3 +27,10 @@ open another terminal
 cd game_store/node_backend
 npm install
 node index.js
+
+## .Net Server
+
+open another terminal 
+```
+cd game_store/dotnet_backend
+dotnet run
