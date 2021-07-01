@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <div>
       <home></home>
+
+
     </div>
   </div>
 </template>
@@ -9,17 +10,20 @@
 <script>
 import Home from "./views/Home.vue";
 export default {
-  Components: { Home },
+  components: { Home },
   data() {
     return {
       cart: [],
+
     };
   },
+      methods: {
+
+    }
 };
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
 #app {
   font-family: "Orbitron", Avenir, Helvetica, Arial, sans-serif;
@@ -32,9 +36,6 @@ export default {
 }
 
 body {
-  background-image: url("./assets/background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+
 }
 </style>

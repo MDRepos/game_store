@@ -2,6 +2,11 @@
 
 ## Features/Stories/Tasks
 
+-Feature: Create the fornt-end
+  -Story: As as system i want to be able to show products
+          Show each product individually
+  -Story: build a shopping cart. 
+
 - Feature: define REST resource/create domain models
 
   - Story: Create the product domain model
