@@ -1,41 +1,21 @@
 <template>
-  <div id="app">
-      <home></home>
-
-
-    </div>
-  </div>
+  <nav-bar></nav-bar>
 </template>
 
 <script>
-import Home from "./views/Home.vue";
+import NavBar from "./components/NavBar.vue";
 export default {
-  components: { Home },
-  data() {
-    return {
-      cart: [],
-
-    };
-  },
-      methods: {
-
-    }
+  name: "App",
+  components: { NavBar },
+  data: () => ({
+    //
+  }),
 };
 </script>
-
 <style>
-
-#app {
-  font-family: "Orbitron", Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #03d930;
-  margin: 0;
-  padding: 0;
+#app{
+  color: #18A558;
+  background-color: #F5F5F5;
 }
 
-body {
-
-}
 </style>
