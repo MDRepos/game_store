@@ -21,7 +21,7 @@ namespace dotnet_backend
         public async Task<Product?> GetById(int id)
         {
             var entity = _db.ProductSet
-                .Where(x => x.id == id)
+                .Where(x => x.Id == id)
                 .ToList()
                 .FirstOrDefault();
 

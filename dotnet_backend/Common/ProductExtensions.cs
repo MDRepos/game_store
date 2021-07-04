@@ -9,28 +9,28 @@ namespace dotnet_backend.Common
         {
             return new ProductEntity
             {
+                Id = domain.Id,
                 Name = domain.Name,
-                Price = domain.Price,
                 Description = domain.Description,
+                Price = domain.Price,
                 Year = domain.Year,
                 ImageUrl = domain.ImageUrl,
                 Category = domain.Category,
                 Platform = domain.Platform,
-                Id = domain.Id
             };
         }
 
         public static ProductViewModel ToViewModel(this Product domain)
         {
             return new ProductViewModel(
-                domain.Name,
-                domain.Description,
-                domain.Category,
-                domain.ImageUrl,
-                domain.Platform,
-                domain.Price,
-                domain.Year,
-                domain.Id
+            domain.Id,
+            domain.Name,
+            domain.Description,
+            domain.Price,
+            domain.Year,
+            domain.ImageUrl,
+            domain.Category,
+            domain.Platform
                 );
         }
     }

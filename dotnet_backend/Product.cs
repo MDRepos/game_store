@@ -3,22 +3,22 @@ namespace dotnet_backend
     public class Product
     {
         public Product(
-            string name,
             int id,
+            string name,
             string description,
             int price,
-            string imageUrl,
             int year,
-            string[] platform,
-            object category
+            string imageUrl,
+            int category,
+            string[] platform
         )
         {
             Id = id;
             Name = name;
             Description = description;
             Price = price;
-            ImageUrl = imageUrl;
             Year = year;
+            ImageUrl = imageUrl;
             Category = category;
             Platform = platform;
         }
@@ -29,7 +29,7 @@ namespace dotnet_backend
         public int Price { get; set; }
         public int Year { get; set; }
         public string ImageUrl { get; set; }
-        public object Category { get; set; }
+        public int Category { get; set; }
         public string[] Platform { get; set; }
     }
 }

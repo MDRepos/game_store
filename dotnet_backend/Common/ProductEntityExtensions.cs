@@ -7,14 +7,16 @@ namespace dotnet_backend.Common
         public static Product ToDomain(this ProductEntity entity)
         {
             return new Product(
-             entity.Name,
-             entity.Year,
-             entity.Description,
-             entity.ImageUrl,
-             entity.Name,
-             entity.Platform,
-             entity.Price,
-             entity.Id);
+            entity.Id,
+            entity.Name,
+            entity.Description,
+            entity.Price,
+            entity.Year,
+            entity.ImageUrl,
+            entity.Category,
+            entity.Platform
+            
+             );
         }
     }
 }

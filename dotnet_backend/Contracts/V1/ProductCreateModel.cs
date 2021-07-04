@@ -11,8 +11,9 @@ namespace dotnet_backend.Contracts.V1
         public int? Price { get; set; }
         public int? Year { get; set; }
         public string? ImageUrl { get; set; }
+        public int? Category { get; set; }
+
         public string[]? Platform { get; set; }
-        public object? Category { get; set; }
 
     }
 
@@ -31,7 +32,6 @@ namespace dotnet_backend.Contracts.V1
                 .NotEmpty();
 
             RuleFor(x => x.Year)
-                .InclusiveBetween(1990, 2050)
                 .NotNull()
                 .NotEmpty();
 
