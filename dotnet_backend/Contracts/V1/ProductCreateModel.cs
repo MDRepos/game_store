@@ -13,8 +13,6 @@ namespace dotnet_backend.Contracts.V1
         public string? ImageUrl { get; set; }
         public int? Category { get; set; }
 
-        public string[]? Platform { get; set; }
-
     }
 
     public class ProductCreateModelValidator : AbstractValidator<ProductCreateModel>
@@ -36,10 +34,6 @@ namespace dotnet_backend.Contracts.V1
                 .NotEmpty();
 
             RuleFor(x => x.Category)
-                .NotNull()
-                .NotEmpty();
-
-            RuleFor(x => x.Platform)
                 .NotNull()
                 .NotEmpty();
 

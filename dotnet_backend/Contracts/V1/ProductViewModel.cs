@@ -3,7 +3,7 @@ namespace dotnet_backend.Contracts.V1
 {
     public class ProductViewModel
     {
-        public ProductViewModel(int id, string name, string description, int price, int year, string imageUrl,  int category,string[] platform)
+        public ProductViewModel(int id, string name, string description, int price, int year, string imageUrl,  int category)
         {
             Id = id;
             Name = name;
@@ -12,7 +12,6 @@ namespace dotnet_backend.Contracts.V1
             Year = year;
             Description = description;
             Category = category;
-            Platform = platform;
         }
 
         public int Id {get; }
@@ -22,11 +21,7 @@ namespace dotnet_backend.Contracts.V1
         public int Price { get; }
         public int Year { get; }
         public string ImageUrl { get; }
-        public int Category { get; }
-
-        public string[] Platform { get; }
-    
-
+        public int Category { get; }    
 
     }
 }

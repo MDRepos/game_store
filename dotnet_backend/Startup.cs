@@ -1,17 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-
+using Microsoft.EntityFrameworkCore;
+using dotnet_backend.Data;
+using dotnet_backend.Common;
+using dotnet_backend.Contracts.V1;
+using FluentValidation.AspNetCore;
+//using static dotnet_backend.ProductService;
 namespace dotnet_backend
 {
     public class Startup
@@ -23,35 +19,22 @@ namespace dotnet_backend
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnet_backend", Version = "v1" });
-            });
+            services.AddControllers()
+                .AddFluentValidation(fv =>
+                    fv.RegisterValidatorsFromAssemblyContaining<ProductCreateModelValidator>());
+            services.AddDbContext<ProductDbContext>(opt => opt.UseInMemoryDatabase("ProductDb"));
+            services.AddTransient<ProductService>();
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnet_backend v1"));
-            }
-
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseSpa(config => config.UseProxyToSpaDevelopmentServer("http://localhost:8080/"));
         }
     }
 }

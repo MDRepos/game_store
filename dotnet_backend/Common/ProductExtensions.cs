@@ -16,7 +16,6 @@ namespace dotnet_backend.Common
                 Year = domain.Year,
                 ImageUrl = domain.ImageUrl,
                 Category = domain.Category,
-                Platform = domain.Platform,
             };
         }
 
@@ -29,8 +28,7 @@ namespace dotnet_backend.Common
             domain.Price,
             domain.Year,
             domain.ImageUrl,
-            domain.Category,
-            domain.Platform
+            domain.Category
                 );
         }
     }

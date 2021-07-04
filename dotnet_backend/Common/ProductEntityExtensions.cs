@@ -13,9 +13,7 @@ namespace dotnet_backend.Common
             entity.Price,
             entity.Year,
             entity.ImageUrl,
-            entity.Category,
-            entity.Platform
-            
+            entity.Category
              );
         }
     }

@@ -16,6 +16,5 @@ namespace dotnet_backend.Data
         public int Year { get; set; }
         public string ImageUrl { get; set; }
         public int Category { get; set; }
-        public string[] Platform { get; set; }
     }
 }

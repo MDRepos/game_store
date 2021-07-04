@@ -9,8 +9,7 @@ namespace dotnet_backend
             int price,
             int year,
             string imageUrl,
-            int category,
-            string[] platform
+            int category
         )
         {
             Id = id;
@@ -20,7 +19,6 @@ namespace dotnet_backend
             Year = year;
             ImageUrl = imageUrl;
             Category = category;
-            Platform = platform;
         }
 
         public int Id { get; }
@@ -30,6 +28,5 @@ namespace dotnet_backend
         public int Year { get; set; }
         public string ImageUrl { get; set; }
         public int Category { get; set; }
-        public string[] Platform { get; set; }
     }
 }

@@ -11,7 +11,6 @@ namespace dotnet_backend.Common
             if (createModel.Year is null) throw new ArgumentNullException(nameof(createModel.Year));
             if (createModel.Price is null) throw new ArgumentNullException(nameof(createModel.Price));
             if (createModel.ImageUrl is null) throw new ArgumentNullException(nameof(createModel.ImageUrl));
-            if (createModel.Platform is null) throw new ArgumentNullException(nameof(createModel.Platform));
             if (createModel.Description is null) throw new ArgumentNullException(nameof(createModel.Description));
 
             return new Product(
@@ -21,8 +20,7 @@ namespace dotnet_backend.Common
             createModel.Price.Value,
             createModel.Year.Value,
             createModel.ImageUrl,
-            createModel.Category.Value,
-            createModel.Platform
+            createModel.Category.Value
             );
         }
     }
