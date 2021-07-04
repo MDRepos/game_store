@@ -3,9 +3,9 @@
 ## Features/Stories/Tasks
 
 -Feature: Create the fornt-end
-  -Story: As as system i want to be able to show products
-          Show each product individually
-  -Story: build a shopping cart. 
+-Story: As as system i want to be able to show products
+Show each product individually
+-Story: build a shopping cart.
 
 - Feature: define REST resource/create domain models
 
@@ -16,7 +16,7 @@
   - Story: As a frontend system I want a backend server  
     Create a new dotnet webapi with the command: "dotnet new webapi"  
     https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio  
-    Create a test project for unit/integration tests (See BasicWebApi.Test.csproj)  
+    Create a test project for unit/integration tests (See dotnet_backend.Test.csproj)  
     https://fluentassertions.com/introduction
   - Story: Setup database with efcore  
     Create an entityModel to save in the database/table  
@@ -39,8 +39,7 @@
     Create a controller method for getting all products  
     Create a controller method for getting one specific product  
     Creata a service method for getting all products from the database  
-    Creata a service method for getting a specific product from the database  
-
+    Creata a service method for getting a specific product from the database
 
 * Feature: Host vue.js app with dotnet core
   - Story: As a Developer I want to host my front-end within the dotnet core api  
