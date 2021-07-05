@@ -8,6 +8,7 @@ namespace dotnet_backend.Data
         public ProductDbContext(DbContextOptions<ProductDbContext> options)
             : base(options)
         {
+            
         }
 
         public DbSet<ProductEntity> ProductSet { get; set; }
